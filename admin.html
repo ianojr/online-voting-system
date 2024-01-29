@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="credentials">
+        <form action="" class="inputs" id="admin_form">
+            <input id="input1" type="text" placeholder="Enter name">
+            <br>
+
+            <input id="input2" type="password" placeholder="Enter Password">
+            <input type="submit" value="Enter">
+        </form>
+        <h1 id="enter"></h1>
+    </div>
+
+    <script>
+        let final_answer;
+        let form = document.getElementById('admin_form');
+        form.addEventListener("submit", function(e){
+            e.preventDefault()
+
+            let input_name = document.getElementById('input1');
+            let input_password = document.getElementById('input2');
+
+            if (input_name.value == "ian" && input_password.value == "iano"){
+                window.location.href="admin-accepted.html"
+
+            }else{
+                final_answer = "invalid username"
+            }
+            document.getElementById('enter').innerHTML = final_answer
+            form.reset()
+        })
+    </script>
+</body>
+</html>
