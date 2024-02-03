@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: red;
+    color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 body{
-    background-color: grey;
+    background:linear-gradient(to bottom, rgb(2, 194, 2), rgb(0, 54, 0));
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
 }
 .intro{
     width: 100%;
@@ -15,25 +19,54 @@ body{
     text-align: center;
     font-size: larger;
 }
-.headings{
-    width: 10vw;
-    height: 600px;
-    background-color: blue;
-    position: absolute;
-    top: 10.1vh;
-    border: solid 1px black;
-}
 .candidates{
-    width: 50vw;
-    height: 50vh;
-    background-color: rgb(70, 54, 54);
+    width: 30vw;
+    height: 80vh;
+    background: linear-gradient(to bottom, green, rgb(0, 54, 0));
+    border: none;
+    border-radius: 10px;
     position: absolute;
-    left: 20%;
-    top: 20%;
+    left: 30%;
+    top: 11%;
     text-align: center;
+    padding: 10px;
 }
 .submit{
     width: 40px;
     height: 20px;
     background-color: black;
+}
+.answers{
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    background-color: blueviolet;
+}
+.login-form{
+    width: 20vw;
+    height: 20vh;
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    background-color: blueviolet;
+}
+.head{
+    background-color: rgb(1, 75, 1);
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.candidate{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-top: 10%;
+    font-weight: bolder;
+}
+.button{
+    background-color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 40px;
 }

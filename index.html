@@ -12,38 +12,45 @@
     <div class="intro">
         <h1>SCHOOLS VOTING SYSTEM</h1>
     </div>
-    <div class="headings">
-        <a href="admin.html" target="_blank">Admin</a>
-        <br>
-        <a href="#captains">Captain</a>
-    </div>
     <form id="my_form" action="">
         <fieldset class="candidates">
-            <legend>Vote your leader here</legend>
-            <label for="ian"><input type="radio" id="ian" name="candidate" value="ian">Ian</label>
-            <label for="john"><input type="radio" id="john" name="candidate" value="john">John</label>
-            <label for="doe"><input type="radio" id="doe" name="candidate" value="doe">Doe</label>
+            <h1 class="head"><b>Vote for your candidate.</b></h1>
+            <h3>__--------------------------------------------------------------__</h3>
+            <label for="ian"><input type="radio" id="ian" name="candidate" value="ian"><span class="candidate">Ian Rugi</span></label>
             <br>
-            <button id="submit" onclick="display_ans">Submit</button>
-            <h1 id="ans"></h1>
+            <h1>___________</h1>
+            <label for="john"><input type="radio" id="john" name="candidate" value="john"><span class="candidate">John Doe</span></label>
+            <br>
+            <h1>___________</h1>
+            <label class="candidate3" for="doe"><input type="radio" id="doe" name="candidate" value="doe"><span class="candidate">Ryan Ben</span></label>
+            <br>
+            <button class="button" id="submit" onclick="display_ans">Submit</button>
+            <h1 id="ans"></h1>  
 
-            <table border="1" id="datatable">
-                <thead>
-                    <tr>
-                        <th>THE VOTED CANDIDATES</th>
-                        <!-- <th>Last Name</th>
-                        <th>Email</th> -->
-                    </tr>
-                </thead>
-            </table>
-            <div id="answers" action="admin-accepted.html">
-                <label for="counted1">Ian: <h3 id="counted1"></h3></label>
-                <label for="counted2">John: <h3 id="counted2"></h3></label>
-                <label for="counted3">Doe: <h3 id="counted3"></h3></label>
-            </div>
         </fieldset>
     </form>
+    <table border="1" id="datatable" aria-disabled="true">
+        <thead>
+            <tr>
+                <th>THE VOTED CANDIDATES</th>
+            </tr>
+        </thead>
+    </table>
 
+    <div class="answers" id="answers" style="display: none;">
+        <label for="counted1">Ian Rugi: <h3 id="counted1"></h3></label>
+        <label for="counted2">John Doe: <h3 id="counted2"></h3></label>
+        <label for="counted3">Ryan Ben: <h3 id="counted3"></h3></label>
+    </div>
+    <div class="login-form" id="login-form">
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="submit">Log In</button>
+        </form>
+    </div>
     <script>
         // document.getElementById("my_form").addEventListener("submit", display_ans, function (e) {
         //     e.preventDefault()
@@ -114,8 +121,26 @@
             } else {
                 alert("Please select a candidate")
             }
+        });
 
 
+        const protectedContent = document.getElementById("answers");
+        const loginForm = document.getElementById("login-form");
+
+        loginForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            // Simulate a login check (replace with actual authentication logic)
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === "ian" && password === "iano") {
+                protectedContent.style.display = "block";
+                loginForm.style.display = "none"; // Hide the login form after successful login
+            } else {
+                alert("Invalid username or password");
+            }
+            form.reset()
         });
     </script>
 </body>
