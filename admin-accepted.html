@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>admin-accepted</title>
+    <link rel="stylesheet" href="admin-accepted.css">
 </head>
+
 <body>
-    div
+    <div id="captain-win-check" class="won-candidate-holders">
+        <h3 id="counted1"></h3>
+        <h3 id="counted2">John: </h3>
+        <h3 id="counted3">Doe: </h3>
+        <h3 id="final-answer-placeholder"></h3>
+
+    </div>
+    <script>
+        let form = document.getElementById('captain-win-check');
+        form.addEventListener('', function (e) {
+            e.preventDefault()
+            const urlParams = new URLSearchParams(window.location.href = "index.html");
+            const receivedH1Value = urlParams.get('counted1');
+            document.getElementById("counted1").innerHTML = ian_ans
+        })
+
+    </script>
 </body>
+
 </html>

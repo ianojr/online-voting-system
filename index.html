@@ -15,32 +15,108 @@
     <div class="headings">
         <a href="admin.html" target="_blank">Admin</a>
         <br>
-        <a href="#captain">Captain</a>
+        <a href="#captains">Captain</a>
     </div>
-    <form action="">
-        <fieldset class="candidates" id="captain">
-            <legend>vote your leader here</legend>
-            <label for="captain_name">Enter the captain name: </label>
-            <input type="text" id="captain_name" value="ian">
-            <br>
-            <input class="submit" type="submit" value="VOTE">
-        </fieldset>
-    </form>
-    <!-- <form action="">
-        <fieldset class="candidates" id="captain">
+    <form id="my_form" action="">
+        <fieldset class="candidates">
             <legend>Vote your leader here</legend>
             <label for="ian"><input type="radio" id="ian" name="candidate" value="ian">Ian</label>
             <label for="john"><input type="radio" id="john" name="candidate" value="john">John</label>
             <label for="doe"><input type="radio" id="doe" name="candidate" value="doe">Doe</label>
             <br>
-            <input class="submit" type="submit" value="VOTE">
+            <button id="submit" onclick="display_ans">Submit</button>
             <h1 id="ans"></h1>
+
+            <table border="1" id="datatable">
+                <thead>
+                    <tr>
+                        <th>THE VOTED CANDIDATES</th>
+                        <!-- <th>Last Name</th>
+                        <th>Email</th> -->
+                    </tr>
+                </thead>
+            </table>
+            <div id="answers" action="admin-accepted.html">
+                <label for="counted1">Ian: <h3 id="counted1"></h3></label>
+                <label for="counted2">John: <h3 id="counted2"></h3></label>
+                <label for="counted3">Doe: <h3 id="counted3"></h3></label>
+            </div>
         </fieldset>
-    </form> -->
+    </form>
 
     <script>
+        // document.getElementById("my_form").addEventListener("submit", display_ans, function (e) {
+        //     e.preventDefault()
+
+        //     let new_row = table.insertRow();
+        //     new_row.insertCell(0).textContent = won
+        //     form.reset()
+        // });
+
+        // function display_ans() {
+        //     won_candidate = document.querySelector('input[name="candidate"]:checked').value;
+        //     let won = document.getElementById('ans').textContent = won_candidate;
+        // }
+
+        document.getElementById("my_form").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            // Get a reference to the table element
+            const table = document.getElementById("datatable");
+
+            // Create a new row and cell, passing the correct index to insertCell()
+            const newRow = table.insertRow();
+            newRow.insertCell(0).textContent = won_candidate;
+
+            // Reset the form
+            form.reset();
+        });
+
+        function display_ans() {
+            won_candidate = document.querySelector('input[name="candidate"]:checked').value;
+            document.getElementById('ans').textContent = won_candidate;
+        }
+
+        //Here is where the won candidate is calculated.
+        // let form = document.getElementById('my_form');
+        // form.addEventListener('submit', function(e){
+        //     e.preventDefault()
+
+        //     let count = 0;
+        //     if (won_candidate === 'ian'){
+        //         count = count + 1
+        //         document.getElementById('counted').innerHTML = count;
+        //     }
+
+        // })
+
+        let count1 = 0; // Declare count outside the listener to maintain value
+        let count2 = 0;
+        let count3 = 0;
+
+        let form = document.getElementById('my_form');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Assuming you'll obtain the won_candidate value elsewhere
+            if (document.querySelector('input[name="candidate"]:checked').value === 'ian') {
+                count1++; // Increment count
+                document.getElementById('counted1').innerHTML = count1;
+
+            } else if (document.querySelector('input[name="candidate"]:checked').value === 'john') {
+                count2++; // Increment count
+                document.getElementById('counted2').innerHTML = count2;
+
+            } else if (document.querySelector('input[name="candidate"]:checked').value === 'doe') {
+                count3++; // Increment count
+                document.getElementById('counted3').innerHTML = count3;
+
+            } else {
+                alert("Please select a candidate")
+            }
 
 
+        });
     </script>
 </body>
 
