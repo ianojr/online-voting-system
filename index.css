@@ -1,25 +1,29 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
-body{
-    background:linear-gradient(to bottom, rgb(2, 194, 2), rgb(0, 54, 0));
+
+body {
+    background: linear-gradient(to bottom, rgb(2, 194, 2), rgb(0, 54, 0));
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
 }
-.intro{
+
+.intro {
     width: 100%;
     height: 10vh;
-    background-color: blue;
+    background-color: lightgreen;
     text-align: center;
     font-size: larger;
 }
-.candidates{
+
+.candidates {
     width: 30vw;
     height: 80vh;
     background: linear-gradient(to bottom, green, rgb(0, 54, 0));
@@ -31,12 +35,14 @@ body{
     text-align: center;
     padding: 10px;
 }
-.submit{
+
+.submit {
     width: 40px;
     height: 20px;
     background-color: black;
 }
-.answers{
+
+.login-form {
     width: 20vw;
     height: 20vh;
     position: absolute;
@@ -44,29 +50,110 @@ body{
     right: 30px;
     background-color: blueviolet;
 }
-.login-form{
-    width: 20vw;
-    height: 20vh;
-    position: absolute;
-    bottom: 50px;
-    right: 30px;
-    background-color: blueviolet;
-}
-.head{
+
+.head {
     background-color: rgb(1, 75, 1);
     text-transform: uppercase;
     border-radius: 10px;
 }
-.candidate{
+
+.candidate {
     margin-top: 20px;
     font-size: 20px;
     margin-top: 10%;
     font-weight: bolder;
 }
-.button{
+
+.button {
     background-color: black;
     border: none;
     padding: 10px;
     border-radius: 10px;
     margin: 40px;
+    font-weight: bolder;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.answers {
+    width: 25vw;
+    height: 70vh;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: linear-gradient(to bottom, limegreen, darkgreen);
+    padding: 20px;
+    border-radius: 5px 5px 40px 40px;
+    box-shadow: -1px -1px 10px rgb(200, 235, 3),
+        3px 3px 7px rgba(94, 104, 121, 0.945);
+}
+.login-form{
+    width: 25vw;
+    height: 70vh;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background: linear-gradient(to bottom, limegreen, darkgreen);
+    padding: 20px;
+    border-radius: 5px 5px 40px 40px;
+    box-shadow: -1px -1px 10px rgb(200, 235, 3),
+        3px 3px 7px rgba(94, 104, 121, 0.945);
+}
+.button2{
+    padding: 10px;
+    width: 70%;
+    background: linear-gradient(to right, rgb(0, 255, 85), rgb(0, 255, 221));
+    border: none;
+    border-radius: 10px;
+    color: crimson;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    align-items: center;
+    margin: 0 15%;
+}
+.validates{
+    outline: none;
+    width: 95%;
+    height: 30px;
+    border-radius: 10px;
+    color: black;
+    padding-left: 10px;
+    font-size: 1rem;
+
+}
+.admin{
+    color: yellow;
+    font-weight: bolder;
+    font-size: 3rem;
+    text-align: center;
+    background-color: green;
+    border: solid 1px darkgreen;
+    border-radius: 75px;
+}
+.instructions{
+    border: solid 1px limegreen;
+    height: 80px;
+    margin: 40px 0;
+    border-radius: 5px 5px 30px 30px;
+    padding: 10px;
+    text-align: center;
+}
+.counted1{
+    font-size: 1rem;
+    color: black;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
+.counted2{
+    font-size: 1rem;
+    color: black;
+    font-weight: 1000;
+    text-transform: uppercase;
+}
+.counted3{
+    font-size: 1rem;
+    color: black;
+    font-weight: 1000;
+    text-transform: uppercase;
 }

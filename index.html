@@ -4,28 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>voting-for-schools</title>
+    <title>school e-voting system</title>
     <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div class="intro">
-        <h1>SCHOOLS VOTING SYSTEM</h1>
+        <h1>SCHOOLS E-VOTING SYSTEM</h1>
     </div>
     <form id="my_form" action="">
         <fieldset class="candidates">
-            <h1 class="head"><b>Vote for your candidate.</b></h1>
+            <h3 class="head"><b>Vote for the <h1>school Captain.</h1></b></h3>
             <h3>__--------------------------------------------------------------__</h3>
-            <label for="ian"><input type="radio" id="ian" name="candidate" value="ian"><span class="candidate">Ian Rugi</span></label>
+            <label for="ian"><input type="radio" id="ian" name="candidate" value="ian"><span class="candidate">Ian
+                    Rugi</span></label>
             <br>
             <h1>___________</h1>
-            <label for="john"><input type="radio" id="john" name="candidate" value="john"><span class="candidate">John Doe</span></label>
+            <label for="john"><input type="radio" id="john" name="candidate" value="john"><span class="candidate">John
+                    Doe</span></label>
             <br>
             <h1>___________</h1>
-            <label class="candidate3" for="doe"><input type="radio" id="doe" name="candidate" value="doe"><span class="candidate">Ryan Ben</span></label>
+            <label class="candidate3" for="doe"><input type="radio" id="doe" name="candidate" value="doe"><span
+                    class="candidate">Ryan Ben</span></label>
             <br>
             <button class="button" id="submit" onclick="display_ans">Submit</button>
-            <h1 id="ans"></h1>  
+            <h1 id="ans"></h1>
 
         </fieldset>
     </form>
@@ -38,17 +41,25 @@
     </table>
 
     <div class="answers" id="answers" style="display: none;">
-        <label for="counted1">Ian Rugi: <h3 id="counted1"></h3></label>
-        <label for="counted2">John Doe: <h3 id="counted2"></h3></label>
-        <label for="counted3">Ryan Ben: <h3 id="counted3"></h3></label>
+        <h2>CANDIDATE SCORES</h2>
+        <h3>--____________________________--</h3>
+        <label class="counted1" for="counted1">Ian Rugi: <h3 id="counted1"></h3></label>
+        <label class="counted2" for="counted2">John Doe: <h3 id="counted2"></h3></label>
+        <label class="counted3" for="counted3">Ryan Ben: <h3 id="counted3"></h3></label>
     </div>
     <div class="login-form" id="login-form">
+        <h1 class="admin">ADMIN</h1>
+        <h3 style="color: rgb(255, 230, 0);">--_____________________________--</h3>
         <form id="login-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
-            <button type="submit">Log In</button>
+            <label for="username"><b>Username:</b></label>
+            <input class="validates" type="text" id="username" name="username"><br><br>
+            <label for="password"><b>Password:</b></label>
+            <input class="validates" type="password" id="password" name="password"><br><br>
+            <button class="button2" type="submit">Log In</button>
+            <div class="instructions">
+                <h3 style="color: orangered;">Only 'admin' should Log in.</h3>
+                <h5 style="color: red;">Ensure you enter the correct Username and Password.</h5>
+            </div>
         </form>
     </div>
     <script>
@@ -74,7 +85,6 @@
             // Create a new row and cell, passing the correct index to insertCell()
             const newRow = table.insertRow();
             newRow.insertCell(0).textContent = won_candidate;
-
             // Reset the form
             form.reset();
         });
@@ -101,27 +111,27 @@
         let count2 = 0;
         let count3 = 0;
 
-        let form = document.getElementById('my_form');
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+        // let form = document.getElementById('my_form');
+        // form.addEventListener('submit', function (e) {
+        //     e.preventDefault();
 
-            // Assuming you'll obtain the won_candidate value elsewhere
-            if (document.querySelector('input[name="candidate"]:checked').value === 'ian') {
-                count1++; // Increment count
-                document.getElementById('counted1').innerHTML = count1;
+        //     // Assuming you'll obtain the won_candidate value elsewhere
+        //     if (document.querySelector('input[name="candidate"]:checked').value === 'ian') {
+        //         count1++; // Increment count
+        //         document.getElementById('counted1').innerHTML = count1;
 
-            } else if (document.querySelector('input[name="candidate"]:checked').value === 'john') {
-                count2++; // Increment count
-                document.getElementById('counted2').innerHTML = count2;
+        //     } else if (document.querySelector('input[name="candidate"]:checked').value === 'john') {
+        //         count2++; // Increment count
+        //         document.getElementById('counted2').innerHTML = count2;
 
-            } else if (document.querySelector('input[name="candidate"]:checked').value === 'doe') {
-                count3++; // Increment count
-                document.getElementById('counted3').innerHTML = count3;
+        //     } else if (document.querySelector('input[name="candidate"]:checked').value === 'doe') {
+        //         count3++; // Increment count
+        //         document.getElementById('counted3').innerHTML = count3;
 
-            } else {
-                alert("Please select a candidate")
-            }
-        });
+        //     } else {
+        //         alert("Please select a candidate")
+        //     }
+        // });
 
 
         const protectedContent = document.getElementById("answers");
@@ -141,7 +151,77 @@
                 alert("Invalid username or password");
             }
             form.reset()
+
         });
+
+        // let hasVoted = false;
+        // let voteTimer;
+
+        // document.getElementById("my_form").addEventListener("submit", (e) => {
+        //     e.preventDefault();
+
+        //     if (hasVoted) {
+        //         alert("You have already voted! Please wait for 10 seconds to vote again.");
+        //         return;
+        //     }
+
+        //     // ... (rest of your submit event logic, including counting votes and updating the table)
+
+        //     hasVoted = true;
+
+        //     // Start the timer to allow voting again after 10 seconds
+        //     voteTimer = setTimeout(() => {
+        //         hasVoted = false;
+        //     }, 10000);
+        // });
+
+        // Declare variables globally
+        let hasVoted = false;
+        let voteTimer;
+        let lastVotedCandidate = null; // Track last voted candidate to prevent multiple votes for same candidate
+
+        document.getElementById("my_form").addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (hasVoted) {
+                alert("You have already voted. You can't vote twice !!!");
+                return;
+            }
+
+            // Check if the user is voting for the same candidate within 10 minutes
+            const selectedCandidate = document.querySelector('input[name="candidate"]:checked').value;
+            if (selectedCandidate === lastVotedCandidate) {
+                alert("You have already voted. You can't vote twice !!!");
+                return;
+            }
+
+            // ... (rest of your submit event logic, including counting votes and updating the table)
+
+            // Count votes only if the user hasn't voted within 10 minutes and for a different candidate
+            if (!hasVoted && selectedCandidate !== lastVotedCandidate) {
+                if (selectedCandidate === 'ian') {
+                    count1++;
+                    document.getElementById('counted1').innerHTML = count1;
+                } else if (selectedCandidate === 'john') {
+                    count2++;
+                    document.getElementById('counted2').innerHTML = count2;
+                } else if (selectedCandidate === 'doe') {
+                    count3++;
+                    document.getElementById('counted3').innerHTML = count3;
+                }
+            }
+
+            hasVoted = true;
+            lastVotedCandidate = selectedCandidate; // Update last voted candidate
+
+            // Start the timer to allow voting again after 600 seconds (10 minutes)
+            voteTimer = setTimeout(() => {
+                hasVoted = false;
+                lastVotedCandidate = null; // Reset last voted candidate after 10 minutes
+            }, 1000); // 600000 milliseconds = 600 seconds
+        });
+
+
     </script>
 </body>
 
