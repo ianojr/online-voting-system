@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>school e-voting system</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,100&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="intro">
-        <h1>SCHOOLS E-VOTING SYSTEM</h1>
+        <h1>EduVox System</h1>
     </div>
     <form id="my_form" action="">
         <fieldset class="candidates">
             <h3 class="head"><b>Vote for the <h1>school Captain.</h1></b></h3>
-            <h3>__--------------------------------------------------------------__</h3>
+            <h3>__~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~__</h3>
             <label for="ian"><input type="radio" id="ian" name="candidate" value="ian"><span class="candidate">Ian
                     Rugi</span></label>
             <br>
@@ -49,17 +52,12 @@
     </div>
     <div class="login-form" id="login-form">
         <h1 class="admin">ADMIN</h1>
-        <h3 style="color: rgb(255, 230, 0);">--_____________________________--</h3>
         <form id="login-form">
             <label for="username"><b>Username:</b></label>
             <input class="validates" type="text" id="username" name="username"><br><br>
             <label for="password"><b>Password:</b></label>
             <input class="validates" type="password" id="password" name="password"><br><br>
             <button class="button2" type="submit">Log In</button>
-            <div class="instructions">
-                <h3 style="color: orangered;">Only 'admin' should Log in.</h3>
-                <h5 style="color: red;">Ensure you enter the correct Username and Password.</h5>
-            </div>
         </form>
     </div>
     <script>
