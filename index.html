@@ -13,7 +13,7 @@
 
 <body>
     <div class="intro">
-        <h1>EduVox System</h1>
+        <h1><b>EduVox System</b></h1>
     </div>
     <form id="my_form" action="">
         <fieldset class="candidates">
@@ -200,23 +200,26 @@
                 if (selectedCandidate === 'ian') {
                     count1++;
                     document.getElementById('counted1').innerHTML = count1;
+                    alert('Thanks for voting!')
                 } else if (selectedCandidate === 'john') {
                     count2++;
                     document.getElementById('counted2').innerHTML = count2;
+                    alert('Thanks for voting!')
                 } else if (selectedCandidate === 'doe') {
                     count3++;
                     document.getElementById('counted3').innerHTML = count3;
+                    alert('Thanks for voting!')
                 }
             }
 
             hasVoted = true;
             lastVotedCandidate = selectedCandidate; // Update last voted candidate
 
-            // Start the timer to allow voting again after 600 seconds (10 minutes)
+            // Start the timer to allow voting again after 200 seconds (2 minutes)
             voteTimer = setTimeout(() => {
                 hasVoted = false;
                 lastVotedCandidate = null; // Reset last voted candidate after 10 minutes
-            }, 1000); // 600000 milliseconds = 600 seconds
+            }, 20000); // 600000 milliseconds = 200 seconds
         });
 
 
